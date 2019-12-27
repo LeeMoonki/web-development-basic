@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LeeMoonki">
+
+    <title>Float</title>
+
+    <style>
+      .wrapper {
+        width: 130px;
+        border: 1px solid #e2a111;
+      }
+      .overflow {
+        overflow: hidden;
+      }
+      .overflow-x {
+        overflow-x: scroll;
+      }
+      .inline {
+        display: inline-block;
+      }
+      .float-left {
+        float: left;
+      }
+      .float-right {
+        float: right;
+      }
+      .red-box {
+        width: 50px;
+        height: 50px;
+        background-color: #f00;
+        border: 1px solid #0ff;
+      }
+      .green-box {
+        width: 50px;
+        height: 50px;
+        background-color: #0f0;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="red-box float-left"></div>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </div>
+    <br>
+    <div class="wrapper"> <!-- overflow 적용해보기 -->
+      <div class="red-box float-left"></div>
+      <div class="red-box float-left"></div>
+      <div class="red-box float-left"></div>
+    </div>
+    <div class="green-box"></div>
+    <br>
+    <div class="wrapper overflow">
+      <div class="red-box float-left"></div>
+      <div class="red-box float-left"></div>
+      <div class="red-box float-left"></div>
+    </div>
+    <div class="green-box"></div>
+    <br>
+    <div class="wrapper inline">
+      <div class="red-box float-left"></div>
+      <div class="red-box float-left"></div>
+      <div class="red-box float-left"></div>
+    </div>
+    <div class="green-box"></div>
+  </body>
+</html>

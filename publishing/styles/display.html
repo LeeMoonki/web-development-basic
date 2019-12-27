@@ -9,10 +9,13 @@
     <title>display</title>
 
     <style type="text/css">
+      .bg-green {
+        background-color: #0f0;
+      }
       .margin-top-5 {
         margin-top: 5px;
       }
-      .block {
+      .box {
         width: 100px;
         height: 30px;
         border: 1px solid #000;
@@ -28,16 +31,20 @@
   </head>
   <body>
     <div class="margin-top-5">
-      <div class="block">foo</div>
-      <div class="block">bar</div>
+      <div class="box">foo</div>
+      <div class="box">bar</div>
     </div>
     <div class="margin-top-5">
-      <div class="block inline">foo</div>
-      <div class="block inline">bar</div>
+      <div class="box inline">foo</div>
+      <div class="box inline">bar</div>
     </div>
     <div class="margin-top-5">
-      <div class="block inline-block">foo</div>
-      <div class="block inline-block">bar</div>
+      <div class="box inline-block">foo</div>
+      <div class="box inline-block">bar</div>
+    </div>
+    <div class="margin-top-5 inline-block bg-green">
+      <div class="box" style="opacity: 0.5"></div>
+      <div class="box" style="opacity: 0.5"></div>
     </div>
   </body>
 </html>
