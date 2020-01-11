@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LeeMoonki">
+
+    <title>Scope</title>
+  </head>
+  <body>
+
+    <script>
+      const loop = 5000000;
+      let count = 0;
+
+      function workTimer(name, work, loopTime) {
+        console.time(name);
+        for (let i = 0; i < loopTime; ++i) {
+          work();
+        }
+        console.timeEnd(name);
+      }
+
+      // console.log('eval exists : ', eval);
+      
+      workTimer('eval', () => {
+        count++;
+        (() => {})()
+      }, loop);
+      
+      count = 0;
+      workTimer('no eval', () => {count++;eval()}, loop);
+      workTimer('no eval1', () => {count++}, loop);
+    </script>
+  </body>
+</html>
