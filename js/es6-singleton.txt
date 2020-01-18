@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/48366563/es6-singleton-vs-instantiating-a-class-once

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LeeMoonki">
+
+    <title>softBind</title>
+  </head>
+  <body>
+
+    <script>
+      if (!Function.prototype.softBind) {
+        Function.prototype.softBind = function(obj, ...curr) {
+          let fn = this; // 바인딩 하려는 함수
+
+          let curried = curr;
+
+          // 바인딩 결과 함수
+          let bound = function(...args) {
+            // this가 falsy거나 window(web의 전역 객체) 또는 global(node의 전역 객체)이면 softBind의 바인딩 대상(obj)으로 바인딩하고
+            // 아니라면 this로 바인딩한다.
+            return fn.apply((!this || this === (window || global)) ? obj : this, curried.concat(args));
+          };
+
+          // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+          bound.prototype = Object.create(fn.prototype);
+
+          return bound;
+        };
+      }
+
+      function foo() {
+        console.log('name : ', this.name);
+      }
+
+      let obj1 = {name: 'obj1'};
+      let obj2 = {name: 'obj2'};
+      let obj3 = {name: 'obj3'};
+
+      let fooObj = foo.softBind(obj1);
+      fooObj();
+
+      // softBind는 fn.apply에서 this가 호출하는 객체다
+      obj2.foo = foo.softBind(obj1);
+      obj2.foo();
+
+      fooObj.call(obj3)
+
+      setTimeout(obj2.foo, 10);
+
+      // currying
+      function curr(a, b) {
+        console.log('currying : ', a, b);
+      }
+
+      let bar = curr.softBind(null, 10);
+      bar(20);
+
+
+      // ============================== compare ==============================
+      function compareFunc() {
+        console.log('compare binding name : ', this.name);
+      }
+
+      // hard binding을 하면 obj2에 전달되는 compareFunc이 obj1에 바인딩 된 함수이기 때문에
+      // 암시적바인딩은 후순위가 되면서 하드 바인딩이 적용된다.
+      let compObj = compareFunc.bind(obj1);
+      compObj();
+
+      obj2.compareFunc = compareFunc.bind(obj1);
+      obj2.compareFunc();
+    </script>
+  </body>
+</html>
