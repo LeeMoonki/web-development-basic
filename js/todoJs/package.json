@@ -1,0 +1,12 @@
+{
+  "name": "todoJs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
+}
