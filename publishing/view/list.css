@@ -84,6 +84,7 @@
   position: absolute;
   width: 60px;
   height: 100%;
+  z-index: 10;
   border-right: 1px solid #dedede;
 }
 .nav-side__profile-list > li:first-child {
@@ -109,6 +110,9 @@
   border-radius: 20px;
   background-color: #0551af;
 }
+.nav-side__menu {
+  margin-top: 130px;
+}
 .nav-side__menu-icon-wrapper {
   padding: 23px 18px;
 }
@@ -119,12 +123,74 @@
   width: 24px;
   height: 24px;
 }
-.nav-side__menu-playground--inactive {
-  background-image: url("../assets/imgs/playground.png")
-}
-.nav-side__menu-playground--active {
-  background-image: url("../assets/imgs/playground-active.png")
-}
+.nav-side__menu-playground--inactive {background-image: url("../assets/imgs/playground.png")}
+.nav-side__menu-playground--active {background-image: url("../assets/imgs/playground-active.png")}
+.nav-side__menu-stat--inactive {background-image: url("../assets/imgs/stat.png")}
+.nav-side__menu-stat--active {background-image: url("../assets/imgs/stat-active.png")}
+.nav-side__menu-enhance--inactive {background-image: url("../assets/imgs/menu-enhance.png")}
+.nav-side__menu-enhance--active {background-image: url("../assets/imgs/menu-enhance-active.png")}
+.nav-side__menu-talk--inactive {background-image: url("../assets/imgs/menu-talk.png")}
+.nav-side__menu-talk--active {background-image: url("../assets/imgs/menu-talk-active.png")}
+.nav-side__menu-setting--inactive {background-image: url("../assets/imgs/menu-setting.png")}
+.nav-side__menu-setting--active {background-image: url("../assets/imgs/menu-setting-active.png")}
+
 .content {
   width: 100%;
+}
+.content-wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 1060px;
+}
+
+.content-header {
+  margin-top: 30px;
+}
+.content-header__subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.7;
+  color: #98a5b4;
+}
+.content-header__title {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -1;
+  color: #000c4f;
+}
+
+.content-list-wrapper {
+  border: 1px solid #000;
+}
+.content-list {}
+.content-list__wrapper {
+  display: flex;
+}
+.content-list__wrapper > div {
+  height: 20px;
+  border: 1px solid #f00;
+}
+.content-list__c1 {
+  min-width: 58px;
+  max-width: 58px;
+}
+.content-list__c2 {
+  min-width: 741px;
+}
+.content-list__c3 {
+  min-width: 57px;
+  max-width: 57px;
+}
+.content-list__c4 {
+  min-width: 78px;
+  max-width: 78px;
+}
+.content-list__c5 {
+  min-width: 46px;
+  max-width: 46px;
+}
+.content-list__c6 {
+  min-width: 80px;
+  max-width: 80px;
 }

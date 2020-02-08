@@ -38,10 +38,10 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
+/* h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
+} */
 
 /* Grouping content
    ========================================================================== */
@@ -358,4 +358,11 @@ ol, ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: normal;
+  font-style: normal;
 }
