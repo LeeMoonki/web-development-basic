@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LeeMoonki">
+
+    <title>Responsive element</title>
+
+    <style>
+
+      .box {
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+      }
+
+      /* Big tablet to 1200px (widths smaller taht the 1140px row) */
+      @media only screen and (max-width: 1200px) {
+
+      }
+
+      /* Small tablet to big tablet: from 768px to 1023px */
+      @media only screen and (max-width: 1023px) {
+
+      }
+
+      /* Small phones to small tablets: from 481px to 767px */
+      @media only screen and (max-width: 767px) {
+        .box {
+          width: 100px;
+          background-color: #fff;
+          border: 3px dashed #f00;
+        }
+      }
+
+      /* Small phones: from 0 to 480px */
+      @media only screen and (max-width: 480px) {
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
